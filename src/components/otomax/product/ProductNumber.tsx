@@ -468,6 +468,15 @@ export default function ProductNumber({statusReload, dateRange}:ParamProps) {
 
 
   useEffect(() => {  
+    const now = new Date(2025, 2, 29);
+    const dateStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const dateEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate());  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    dateRange = [
+      dateStart,
+      dateEnd
+    ] 
+    
     fetchAllData() 
 
     const interval = setInterval(() => {  

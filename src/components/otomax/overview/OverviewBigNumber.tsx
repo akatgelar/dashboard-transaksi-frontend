@@ -74,7 +74,16 @@ export default function OverviewBigNumber({statusReload, dateRange}:ParamProps) 
   const [loadingOverviewOmsetMargin, setLoadingOverviewOmsetMargin] = useState(true);
   const [overviewOmsetMarginData, setOverviewOmsetMarginData] = useState<OverviewOmsetMarginModel>()
  
-  useEffect(() => { 
+  useEffect(() => {   
+    const now = new Date(2025, 2, 29);
+    const dateStart = new Date(now.getFullYear(), now.getMonth(), 1);
+    const dateEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate());  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    dateRange = [
+      dateStart,
+      dateEnd
+    ] 
+
     fetchAllData()
 
 		const interval = setInterval(() => { 
@@ -84,7 +93,8 @@ export default function OverviewBigNumber({statusReload, dateRange}:ParamProps) 
         fetchOverviewOmsetMargin()
         }
     }, 5 * 60 * 1000)
-    return () => clearInterval(interval)
+    
+    return () => clearInterval(interval) 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dateRange, statusReload]);
 
