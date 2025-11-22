@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextRequest } from 'next/server'
 
 export async function POST(request: NextRequest) {   
@@ -16,7 +17,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify(payload)
     }
     
-    await fetch(url, settings)  
+    // await fetch(url, settings)  
     return Response.json({})
     
   } catch(error){
