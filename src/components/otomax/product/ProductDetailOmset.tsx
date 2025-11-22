@@ -369,7 +369,7 @@ export default function ProductDetailOmset({statusReload, dateRange, productType
       setLoadingDownload(true);  
 
       const title = 'Product Omset';
-      const now = new Date(); 
+      const now = new Date(2025, 10, 21) 
       const dateString = moment(now).format('YYYY.MM.DD HH.mm.ss'); 
       const workbook = XLSX.utils.book_new();
       const worksheet = XLSX.utils?.json_to_sheet(dataTable!);

@@ -351,7 +351,7 @@ export default function ModulTransaksi({statusReload, dateRange}:StatusProps) {
       setLoadingDownload(true);  
 
       const title = 'Modul Transaksi';
-      const now = new Date(); 
+      const now = new Date(2025, 10, 21) 
       const dateString = moment(now).format('YYYY.MM.DD HH.mm.ss'); 
       const workbook = XLSX.utils.book_new();
       const worksheet = XLSX.utils?.json_to_sheet(dataTable!);

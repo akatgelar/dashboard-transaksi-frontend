@@ -22,7 +22,7 @@ export default function DashboardModul() {
     const [statusReload, setStatusReload] = useState(true);
     const [lastUpdate, setLastUpdate] = useState<string>(""); 
 
-    const now = new Date();
+    const now = new Date(2025, 10, 21)
     const dateStart = new Date(now.getFullYear(), now.getMonth(), 1);
     const dateEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     

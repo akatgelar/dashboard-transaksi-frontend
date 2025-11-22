@@ -74,7 +74,7 @@ export default function JurnalWarehouse() {
   const [statusReload, setStatusReload] = useState(true);
   const [lastUpdate, setLastUpdate] = useState<string>("");
         
-  const now = new Date();
+  const now = new Date(2025,7,23);
   const dateStart = new Date(2025, 0, 1);
   const dateEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate()-1);
   

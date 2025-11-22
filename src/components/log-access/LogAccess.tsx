@@ -65,7 +65,7 @@ export default function LogAccess() {
       : "text-gray-500 dark:text-gray-400";
    
   // variable for api
-  const now = new Date();
+  const now = new Date(2025, 10, 21)
   const dateStart = new Date(now.getFullYear(), now.getMonth(), 1);
   const dateEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   
@@ -838,7 +838,7 @@ export default function LogAccess() {
       setLoadingDownload(true);  
 
       const title = 'Log Action';
-      const now = new Date(); 
+      const now = new Date(2025, 10, 21) 
       const dateString = moment(now).format('YYYY.MM.DD HH.mm.ss'); 
       const workbook = XLSX.utils.book_new();
       const worksheet = XLSX.utils?.json_to_sheet(rowData!);

@@ -365,7 +365,7 @@ export default function ResellerSectionTransaksi({statusReload, dateRange}:Param
       setLoadingDownload(true);  
 
       const title = 'Reseller Transaksi';
-      const now = new Date(); 
+      const now = new Date(2025, 10, 21) 
       const dateString = moment(now).format('YYYY.MM.DD HH.mm.ss'); 
       const workbook = XLSX.utils.book_new();
       const worksheet = XLSX.utils?.json_to_sheet(dataTable!);
