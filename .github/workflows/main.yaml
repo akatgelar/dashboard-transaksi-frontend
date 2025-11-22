@@ -1,0 +1,52 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_with_github_action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: Login to Dockerhub
+        uses: docker/login-action@v1
+        with:
+          registry: https://ghcr.io
+          username: ${{ secrets.PACKAGE_USERNAME }}
+          password: ${{ secrets.PACKAGE_TOKEN }}
+
+      - name: Build and push Docker image
+        env:
+          ENV: ${{ secrets.ENV }}
+        run: |
+          printf "$ENV" >> .env
+          docker build -t ghcr.io/gerbang-digital-nusantara/gdn-dashboard-frontend:latest -f .docker/Dockerfile .
+          docker push ghcr.io/gerbang-digital-nusantara/gdn-dashboard-frontend:latest
+
+      - name: Copy docker-compose file to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          source: .docker/docker-compose.yml
+          target: /home/app/gdn-dashboard-frontend/
+          strip_components: 1
+
+      - name: Deploy docker-compose on VPS
+        uses: appleboy/ssh-action@master 
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }} 
+          script: |
+            cd /home/app/gdn-dashboard-frontend/
+            echo "${{ secrets.PACKAGE_TOKEN }}" | sudo docker login ghcr.io -u ${{ secrets.PACKAGE_USERNAME }} --password-stdin 
+            sudo docker compose stop
+            sudo docker compose rm -f
+            sudo docker compose pull
+            sudo docker compose up -d 

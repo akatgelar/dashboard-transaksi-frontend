@@ -1,0 +1,8 @@
+services:
+  gdn-dashboard-frontend:
+    # build: .
+    image: ghcr.io/gerbang-digital-nusantara/gdn-dashboard-frontend:latest
+    container_name: 'gdn-dashboard-frontend'  
+    ports:
+      - "6000:3000"
+    restart: always
