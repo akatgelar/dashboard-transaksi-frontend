@@ -307,27 +307,27 @@ const AppSidebar: React.FC = () => {
             <>
               <Image
                 className="dark:hidden" 
-                src="/images/logo/logo-gdn-192x192.png"
+                src="/images/logo/logo-icon.svg"
                 alt="Logo"
                 width={40}
                 height={40}
               />
               <Image
                 className="hidden dark:block"
-                src="/images/logo/logo-gdn-192x192.png"
+                src="/images/logo/logo-icon.svg"
                 alt="Logo"
                 width={40}
                 height={40}
               />
               <span 
-                className="mt-auto ml-2"
+                className="mt-auto ml-2 mb-2"
               >
-                GDN Dashboard
+                Dashboard Transaksi
               </span>
             </>
           ) : (
             <Image
-              src="/images/logo/logo-gdn-192x192.png"
+              src="/images/logo/logo-icon.svg"
               alt="Logo"
               width={40}
               height={40}

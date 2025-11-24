@@ -88,20 +88,20 @@ const AppHeader: React.FC = () => {
               width={32}
               height={32}
               className="dark:hidden"
-              src="/images/logo/logo-gdn-192x192.png"
+              src="/images/logo/logo-icon.svg"
               alt="Logo"
             />
             <Image
               width={32}
               height={32}
               className="hidden dark:block"
-              src="/images/logo/logo-gdn-192x192.png"
+              src="/images/logo/logo-icon.svg"
               alt="Logos"
             />
             <span 
               className="mt-auto ml-2"
             >
-              GDN Dashboard
+              Dashboard Transaksi
             </span>
           </Link>
 
