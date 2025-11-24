@@ -1,8 +1,8 @@
 services:
-  gdn-dashboard-frontend:
+  dashboard-transaksi-frontend:
     # build: .
-    image: ghcr.io/gerbang-digital-nusantara/gdn-dashboard-frontend:latest
-    container_name: 'gdn-dashboard-frontend'  
+    image: ghcr.io/akatgelar/dashboard-transaksi-frontend:latest
+    container_name: 'dashboard-transaksi-frontend'  
     ports:
-      - "6000:3000"
+      - "2061:3000"
     restart: always

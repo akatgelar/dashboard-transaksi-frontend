@@ -24,8 +24,8 @@ jobs:
           ENV: ${{ secrets.ENV }}
         run: |
           printf "$ENV" >> .env
-          docker build -t ghcr.io/gerbang-digital-nusantara/gdn-dashboard-frontend:latest -f .docker/Dockerfile .
-          docker push ghcr.io/gerbang-digital-nusantara/gdn-dashboard-frontend:latest
+          docker build -t ghcr.io/akatgelar/dashboard-transaksi-frontend:latest -f .docker/Dockerfile .
+          docker push ghcr.io/akatgelar/dashboard-transaksi-frontend:latest
 
       - name: Copy docker-compose file to VPS
         uses: appleboy/scp-action@v0.1.7
@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }}
           source: .docker/docker-compose.yml
-          target: /home/app/gdn-dashboard-frontend/
+          target: /home/app/dashboard-transaksi-frontend/
           strip_components: 1
 
       - name: Deploy docker-compose on VPS
@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }} 
           script: |
-            cd /home/app/gdn-dashboard-frontend/
+            cd /home/app/dashboard-transaksi-frontend/
             echo "${{ secrets.PACKAGE_TOKEN }}" | sudo docker login ghcr.io -u ${{ secrets.PACKAGE_USERNAME }} --password-stdin 
             sudo docker compose stop
             sudo docker compose rm -f
