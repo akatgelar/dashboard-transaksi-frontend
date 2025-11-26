@@ -3,8 +3,8 @@ import Home from "@/components/home/Home";
 import PreLoader from "@/components/ui/PreLoader";
 
 export const metadata: Metadata = {
-  title: "Home | Gerbang Digital Nusantara",
-  description: "Aplikasi dashboard untuk Gerbang Digital Nusantara",
+  title: "Home | Dashboard Transaksi",
+  description: "Aplikasi Dashboard Transaksi",
 };
  
 export default function Index(this: never) { 

@@ -3,8 +3,8 @@ import PreLoader from "@/components/ui/PreLoader";
 import type { Metadata } from "next";   
 
 export const metadata: Metadata = {
-  title: "Analisis Pin | Gerbang Digital Nusantara",
-  description: "Aplikasi dashboard untuk Gerbang Digital Nusantara",
+  title: "Analisis Pin | Dashboard Transaksi",
+  description: "Aplikasi Dashboard Transaksi",
 };
  
 export default function Index(this: never) { 

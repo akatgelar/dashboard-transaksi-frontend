@@ -1,6 +1,6 @@
 # Dashboard Frontend
 
-Gerbang Digital Nusantara - Dashboard
+Dashboard Transaksi
 
 ## Tech Stack
 

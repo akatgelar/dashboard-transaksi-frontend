@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Blank | Gerbang Digital Nusantara",
-  description: "Aplikasi dashboard untuk Gerbang Digital Nusantara",
+  title: "Blank | Dashboard Transaksi",
+  description: "Aplikasi Dashboard Transaksi",
 };
 
 export default function BlankPage() {

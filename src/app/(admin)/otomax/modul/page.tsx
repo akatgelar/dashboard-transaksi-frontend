@@ -3,8 +3,8 @@ import DashboardModul from "@/components/otomax/modul/DashboardModul";
 import PreLoader from "@/components/ui/PreLoader";
 
 export const metadata: Metadata = {
-  title: "Modul | Gerbang Digital Nusantara",
-  description: "Aplikasi dashboard untuk Gerbang Digital Nusantara",
+  title: "Modul | Dashboard Transaksi",
+  description: "Aplikasi Dashboard Transaksi",
 };
 
 export default function Index(this: never) { 

@@ -5,8 +5,8 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Error | Gerbang Digital Nusantara",
-  description: "Aplikasi dashboard untuk Gerbang Digital Nusantara",
+  title: "Error | Dashboard Transaksi",
+  description: "Aplikasi Dashboard Transaksi",
 };
 
 export default function Error404() {
